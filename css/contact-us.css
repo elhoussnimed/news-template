@@ -1,0 +1,803 @@
+/* start general rules  */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inconsolata", monospace;
+}
+:root {
+  --primary-color: #ff6f61;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* start media query  */
+@media (max-width: 767px) {
+  .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1199px) {
+  .container {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* end media query  */
+/* end general rules  */
+/* start header ------------------------------------------------------------------------------- */
+header .top-nav {
+  padding-block: 5px;
+  background-color: var(--primary-color);
+}
+header .top-nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+header .top-nav .container i,
+a {
+  color: white;
+}
+header .top-nav .container .top-nav-left a {
+  margin-right: 15px;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+header .top-nav .container .top-nav-left a:hover {
+  color: black;
+}
+header .top-nav .container .top-nav-right a {
+  text-transform: capitalize;
+  margin-left: 10px;
+  position: relative;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+header .top-nav .container .top-nav-right a:hover {
+  color: black;
+}
+header .top-nav .container .top-nav-right a:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 0px;
+  width: 1.5px;
+  height: 100%;
+  background-color: white;
+  transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+}
+header .middle .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+header .middle .container > div {
+  width: 24%;
+}
+header .middle .container > div:nth-child(2) {
+  width: 50%;
+}
+header .middle .container .middle-left {
+  display: flex;
+  align-items: center;
+}
+header .middle .container .middle-left .logo {
+  margin-right: 15px;
+  max-width: 80px;
+}
+header .middle .container .middle-left h2 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+  color: var(--primary-color);
+  font-weight: 400;
+}
+header .middle .container .middle-middle img {
+  max-width: 100%;
+}
+header .middle .container .middle-right {
+  text-align: right;
+  position: relative;
+}
+header .middle .container .middle-right input {
+  border: 1px solid #0000005c;
+  border-radius: 5px;
+  padding: 10px 5px;
+  outline: none;
+  width: 80%;
+}
+header .middle .container .middle-right::after {
+  content: "\f002";
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15%;
+  height: 100%;
+  color: var(--primary-color);
+  font-size: 20px;
+  line-height: 2;
+  text-align: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+header .middle .container .middle-right:hover::after {
+  background-color: var(--primary-color);
+  color: white;
+}
+header .bottom-nav {
+  background-color: var(--primary-color);
+  color: white;
+}
+header .bottom-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .bottom-nav .container nav > i {
+  color: white;
+  display: none;
+}
+header .bottom-nav .container nav ul li a {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin-right: 15px;
+  padding: 10px 5px;
+  display: block;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+header .bottom-nav .container nav ul li a:hover {
+  color: black;
+}
+/* start dropdown  */
+header .bottom-nav .container nav > ul {
+  display: flex;
+}
+header .bottom-nav .container nav ul li:nth-child(2) {
+  position: relative;
+}
+header .bottom-nav .container nav ul li.dropdown::after {
+  content: "\f0dd";
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  color: white;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  transform: translateY(-70%);
+}
+header .bottom-nav .container nav ul li:nth-child(2) ul {
+  width: 120%;
+  display: none;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 100%;
+}
+header .bottom-nav .container nav ul li:nth-child(2) ul li {
+  padding: 5px 10px;
+}
+header .bottom-nav .container nav ul li:nth-child(2) ul li a {
+  margin-right: 0px;
+}
+header .bottom-nav .container nav ul li:nth-child(2):hover ul {
+  display: block;
+  z-index: 2;
+}
+/* end dropdown  */
+header .bottom-nav .container .bottom-nav-icons a i {
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+header .bottom-nav .container .bottom-nav-icons a:first-child i:hover {
+  color: #1877f2;
+}
+header .bottom-nav .container .bottom-nav-icons a:nth-child(2) i:hover {
+  color: #1da1f2;
+}
+header .bottom-nav .container .bottom-nav-icons a:nth-child(3) i:hover {
+  color: #0a66c2;
+}
+header .bottom-nav .container .bottom-nav-icons a:nth-child(4) i:hover {
+  color: #e4405f;
+}
+header .bottom-nav .container .bottom-nav-icons a:last-child i:hover {
+  color: #cd201f;
+}
+@media (max-width: 767px) {
+  header .top-nav .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  header .middle .container {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+  header .middle .container > div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  header .middle .container > div:nth-child(2) {
+    width: 100%;
+  }
+  header .middle .container .middle-left {
+    justify-content: center;
+  }
+  header .middle .container .middle-right input {
+    width: 100%;
+  }
+  header .bottom-nav .container {
+    padding: 10px 0;
+    position: relative;
+  }
+  header .bottom-nav .container nav > i {
+    display: block;
+    font-size: 20px;
+  }
+  header .bottom-nav .container nav > i:hover ~ ul {
+    display: block;
+  }
+  header .bottom-nav .container nav > ul {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    z-index: 2;
+    width: 100%;
+    left: 0px;
+    top: 99%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .middle .container .middle-left h2 {
+    font-size: 2em;
+  }
+  header .middle .container > div:nth-child(2) {
+    width: 45%;
+  }
+  header .middle .container .middle-right input {
+    width: 100%;
+  }
+}
+/* end the header ---------------------------------------------------------------------------------------- */
+/* start the main content ------------------------------------------------------------------------ */
+.link-to-home {
+  padding-block: 20px;
+}
+.link-to-home .container a {
+  color: var(--primary-color);
+  text-transform: capitalize;
+  margin-right: 15px;
+  font-size: 22px;
+  position: relative;
+}
+.link-to-home .container a:not(.active)::after {
+  content: "|";
+  position: absolute;
+  top: -1px;
+  right: -15px;
+  color: var(--primary-color);
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+}
+.link-to-home .container a.active {
+  color: black;
+  font-size: 18px;
+}
+.main-content {
+  padding-block: 20px;
+}
+.main-content .container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+.main-content .container .left-content {
+  grid-column: 1/9;
+}
+.main-content .container .right-content {
+  grid-column: 9/13;
+}
+.main-content .container .left-content form {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .container .left-content form .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 15px;
+}
+.main-content .container .left-content form .top input {
+  width: calc(100% / 2);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.main-content .container .left-content form > input,
+.main-content .container .left-content form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.main-content .container .left-content form button {
+  display: block;
+  width: 30%;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.main-content .container .left-content form input::placeholder,
+.main-content .container .left-content form textarea::placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main-content .container .left-content form input:focus,
+.main-content .container .left-content form textarea:focus {
+  border: 1px solid grey;
+  outline: none;
+}
+.main-content .container .right-content h3 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 4px double black;
+}
+.main-content .container .right-content .get-in-touch p {
+  margin-bottom: 10px;
+}
+.main-content .container .right-content .get-in-touch address {
+  text-transform: uppercase;
+  color: black;
+  position: relative;
+  font-weight: 500;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.main-content .container .right-content .get-in-touch address::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f3c5";
+  top: 2px;
+  left: 0px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+.main-content .container .right-content .get-in-touch > a:nth-child(4) {
+  padding-left: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  color: black;
+  position: relative;
+  display: block;
+}
+.main-content .container .right-content .get-in-touch > a:nth-child(4)::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f0e0";
+  top: 2px;
+  left: 0px;
+}
+.main-content .container .right-content .get-in-touch > a:nth-child(5) {
+  padding-left: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  color: black;
+  position: relative;
+  display: block;
+}
+.main-content .container .right-content .get-in-touch > a:nth-child(5)::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f879";
+  top: 2px;
+  left: 0px;
+}
+.main-content .container .right-content .get-in-touch .footer-icons {
+  display: flex;
+  justify-content: center;
+}
+.main-content .container .right-content .get-in-touch .footer-icons a i {
+  color: black;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 22px;
+  margin-right: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+@media (max-width: 767px) {
+  .main-content .container .left-content {
+    grid-column: 1/13;
+  }
+  .main-content .container .right-content {
+    grid-column: 1/13;
+  }
+  .main-content .container .left-content form .top {
+    flex-direction: column;
+  }
+  .main-content .container .left-content form .top input {
+    width: 100%;
+  }
+  .main-content .container .left-content form button {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-content .container .left-content {
+    grid-column: 1/8;
+  }
+  .main-content .container .right-content {
+    grid-column: 8/13;
+  }
+}
+/* end the main content ------------------------------------------------------------------------ */
+/* start footer --------------------------------------------------------------------- */
+footer {
+  background-color: black;
+  padding-block: 20px;
+}
+footer .container .footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+footer .container .footer-top div h3 {
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  border-bottom: 4px double white;
+  color: white;
+  width: 90%;
+}
+footer .container .footer-top a {
+  display: block;
+  position: relative;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+footer .container .footer-top a h5 {
+  font-size: 20px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+footer .container .footer-top div:nth-child(1) address {
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+  font-weight: 500;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(1) address::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f3c5";
+  top: 2px;
+  left: 0px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(1) address:hover,
+footer .container .footer-top div:nth-child(1) address:hover::before {
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(1) > a {
+  padding-left: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  position: relative;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(1) > a:hover {
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(1) > a:nth-child(3)::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f0e0";
+  top: 2px;
+  left: 0px;
+  color: white;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(1) > a:nth-child(4)::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f879";
+  top: 2px;
+  left: 0px;
+  color: white;
+  transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(1) > a:nth-child(3):hover:before,
+footer .container .footer-top div:nth-child(1) > a:nth-child(4):hover:before {
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(1) .footer-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+footer .container .footer-top div:nth-child(1) .footer-icons a i {
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(1) .footer-icons a:hover i {
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(2) a {
+  position: relative;
+  transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(2) a::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f061";
+  top: 2px;
+  left: 0px;
+  transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(2) a:hover {
+  padding-left: 10px;
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(2) a:hover::before {
+  padding-left: 10px;
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(3) a {
+  position: relative;
+  transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(3) a::before {
+  position: absolute;
+  font-family: "font awesome 5 free";
+  font-weight: 900;
+  content: "\f061";
+  top: 2px;
+  left: 0px;
+  transition: 0.3s all ease;
+}
+footer .container .footer-top div:nth-child(3) a:hover {
+  padding-left: 10px;
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(3) a:hover::before {
+  padding-left: 10px;
+  color: var(--primary-color);
+}
+footer .container .footer-top div:nth-child(4) p {
+  color: white;
+  line-height: 1.4;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+footer .container .footer-top div:nth-child(4) input {
+  padding: 5px;
+  border: 1px solid black;
+  outline: none;
+  width: 70%;
+}
+footer .container .footer-top div:nth-child(4) button {
+  padding: 5px;
+  background-color: black;
+  outline: none;
+  color: white;
+  border: 1px solid white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+footer .container .footer-middle {
+  width: 80%;
+  margin-inline: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .container .footer-middle a {
+  display: block;
+  text-transform: capitalize;
+  position: relative;
+}
+footer .container .footer-middle a:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  top: 0px;
+  right: -30px;
+}
+footer .container .footer-middle a h4 {
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+}
+footer .container .footer-middle a:hover h4 {
+  color: var(--primary-color);
+}
+footer .container .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+footer .container .footer-bottom p {
+  color: white;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 400;
+}
+footer .container .footer-bottom p:nth-child(2) span {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+footer .container .footer-bottom p:nth-child(3) span {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  footer .container .footer-top {
+    grid-template-columns: 1fr;
+  }
+  footer .container .footer-middle {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  footer .container .footer-middle a {
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+  }
+  footer .container .footer-middle a:not(:last-child)::after {
+    display: none;
+  }
+  footer .container .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .container .footer-bottom p {
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  footer .container .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer .container .footer-middle {
+    width: 100%;
+  }
+  footer .container .footer-middle a:not(:last-child)::after {
+    display: none;
+  }
+  footer .container .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .container .footer-bottom p {
+    margin-bottom: 10px;
+  }
+}
+/* end footer --------------------------------------------------------------------- */
